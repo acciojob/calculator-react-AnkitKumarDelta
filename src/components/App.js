@@ -21,7 +21,7 @@ const App = () => {
   }
 
   return (
-    <div id="calci">
+    <div className="Calculator" id="calci">
       <div className="input">
         <input
           type="text"
