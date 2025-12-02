@@ -6,7 +6,7 @@
   height: 400px;
 }
 
-.btn-plus, .btn-equal{
+#btn-plus, #btn-equal{
    grid-row: span 2;
 }
 
