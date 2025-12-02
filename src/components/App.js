@@ -21,7 +21,7 @@ const App = () => {
   }
 
   return (
-    <div className="Calculator">
+    <div id="calci">
       <div className="input">
         <input
           type="text"
@@ -31,8 +31,8 @@ const App = () => {
       </div>
 
       <div className="buttons">
-        <button id="clear" onClick={clearInput}>C</button>
-        <button id="divide" onClick={appendValue}>/</button>
+        <button id="btn-clear" onClick={clearInput}>C</button>
+        <button id="btn-div" onClick={appendValue}>/</button>
         <button id="multiply" onClick={appendValue}>*</button>
         <button id="btn--" onClick={appendValue}>-</button>
 
