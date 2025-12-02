@@ -5,7 +5,11 @@ const App = () => {
   const [input, setInput] = useState("");
 
   function appendValue(e) {
-    setInput(input + e.target.innerText);
+    if (input === "Error") {
+      setInput(e.target.innerText);
+    } else {
+      setInput(input + e.target.innerText);
+    }
   }
 
   function clearInput() {
@@ -14,7 +18,8 @@ const App = () => {
 
   function Evaluate() {
     try {
-      setInput(String(eval(input)));
+      const result = eval(input);
+      setInput(String(result));
     } catch {
       setInput("Error");
     }
@@ -27,6 +32,7 @@ const App = () => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          readOnly
         />
       </div>
 
@@ -39,12 +45,12 @@ const App = () => {
         <button id="btn-7" onClick={appendValue}>7</button>
         <button id="btn-8" onClick={appendValue}>8</button>
         <button id="btn-9" onClick={appendValue}>9</button>
-        <button id="plus" onClick={appendValue}>+</button>
+        <button id="btn-plus" onClick={appendValue}>+</button>
 
         <button id="btn-4" onClick={appendValue}>4</button>
         <button id="btn-5" onClick={appendValue}>5</button>
         <button id="btn-6" onClick={appendValue}>6</button>
-        <button id="equal" onClick={Evaluate}>=</button>
+        <button id="btn-equal" onClick={Evaluate}>=</button>
 
         <button id="btn-1" onClick={appendValue}>1</button>
         <button id="btn-2" onClick={appendValue}>2</button>
