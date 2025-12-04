@@ -26,9 +26,10 @@ const App = () => {
   }
 
   return (
-    <div className="Calculator" id="calci">
+    <div className="Calculator">
       <div className="input">
         <input
+          id="calci"
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
